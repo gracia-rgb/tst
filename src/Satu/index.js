@@ -12,13 +12,19 @@ return (<ul onClick={onListClick}>
 }
 handleItemClick(item, event) {
 // Write your code here
+if (!items.done) {
+    event.persist();
+     this.props.onItemClick(item, event);
+   }
 }
+
 }
 const items = [ { text: 'Buy grocery', done: true },
 { text: 'Play guitar', done: false },
 { text: 'Romantic dinner', done: false }
 ];
-const App = (props) => <TodoList
+const App = (props) => 
+<TodoList
 items={props.items}
 onListClick={(event) => console.log("List clicked!")}
 onItemClick={(item, event) => { console.log(item, event) }}
