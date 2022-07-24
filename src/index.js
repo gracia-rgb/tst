@@ -1,14 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import Satu from './Satu';
+import Dua from './Dua';
+import { BrowserRouter as Router, Switch, Route, } from "react-router-dom";
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Router>
+    <Switch>
+      <Route exact path="/" component={Satu} />
+      <Route exact path="/dua" component={Dua} />
+      </Switch>
+  </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function
